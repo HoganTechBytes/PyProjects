@@ -14,7 +14,7 @@ first = ('Baby oil', 'Bad News', 'Big Burps',
          'Ignatious', 'Jimbo', "Joe 'Pottin Soil'", 'Johnny',
          'Lemongrass', 'Lil Debil', 'Longbranch', '"Lunch Money"',
          'Mergatroid', '"Mr Peabody"', 'Oil-Can', 'Oinks',
-         'Old Scratch', 'Ovaltine', 'Pennywhistle', 'Pitchfork Ben',
+         'Old Scratch', 'Ovaltine', 'Pennywhistle', '"Pitchfork" Ben',
          'Potato Bug', 'Pushmeet','Rock Candy', 'Schlomo',
          'Scratchensniff', 'Scut', 'Sid "The Squirts"',
          'Skidmark', 'Slaps', 'Snakes', 'Snoobs', 'Snorki',
@@ -36,3 +36,16 @@ last = ('Appleyard', 'Bigmeat', 'Bloominshine', 'Boogerbottom',
         'Turnipseed', 'Vinaigrette', 'Walkingstick', 'Wallbanger', 'Weewax',
         'Weiners', 'Whipkey', 'Wigglesworth', 'Wimplesnatch', 'Winterkorn',
         'Woolysocks')
+
+repeats = True
+
+while repeats:
+    firstName = random.choice(first)
+    lastName = random.choice(last)
+
+    print(f'Your "Psych" Sidekick name is: {firstName} {lastName}')
+
+    newName = input("Pick another name? (y/n): ")
+    if newName.lower() in ["n", "no"]:
+        repeats = False
+    
