@@ -1,6 +1,7 @@
 '''A hangman game with a list of secret words'''
 import GetSecret
 import HideWord
+import ValidateGuess
 
 
 #main game loop
@@ -17,6 +18,7 @@ while playing:
     word_guessed = False
     while not word_guessed:
         
-        player_guess = input("Enter a letter: ")
+        player_guess = ValidateGuess.ValidateGuess()
         
+
 
