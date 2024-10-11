@@ -1,15 +1,22 @@
 '''A hangman game with a list of secret words'''
 import GetSecret
+import HideWord
 
 
 #main game loop
 playing = True
+lives = 5
 
 while playing:
     secret = GetSecret.GetSecret()
-    hidden_word = ''
-    for letter in secret:
-        hidden_word += '_'
+    hidden_word = HideWord.Hide(secret)
+    
+    player_guess = ''
+
+    #new game loop
+    word_guessed = False
+    while not word_guessed:
+        
+        player_guess = input("Enter a letter: ")
         
 
-print(hidden_word)
