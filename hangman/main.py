@@ -10,17 +10,17 @@ import CheckGuess
 
 #main game loop
 playing = True
-lives = 6
 
 while playing:
+    lives = 6
     secret = GetSecret.GetSecret()
     hidden_word = HideWord.Hide(secret)
     
     player_guess = ''
 
     #new game loop
-    word_guessed = False
-    while not word_guessed:
+    game_over = False
+    while not game_over:
         #Clear the console
         os.system('cls' if os.name == 'nt' else 'clear')
         print("""
@@ -42,6 +42,18 @@ while playing:
         Noose.Noose_Pic(lives)
         print(hidden_word)
         player_guess = ValidateGuess.ValidateGuess()
-        hidden_word = CheckGuess.CheckGuess(player_guess, secret, hidden_word)
+        checkedGuess = CheckGuess.CheckGuess(player_guess, secret, hidden_word, lives)
 
-        
+        hidden_word = checkedGuess[0]
+        lives = checkedGuess [1]
+
+        if lives == 0:
+            print(f"The secret word was: {secret}")
+            game_over = True
+        elif hidden_word == secret:
+            print(f"You guessed the secret word: {secret}")
+            game_over = True
+
+    replay = input("Would you like to play again(y/n): ").lower()
+    if replay in ('n', 'no'):
+        playing = False
