@@ -40,12 +40,7 @@ while playing:
 """)
 
         Noose.Noose_Pic(lives)
-        print(hidden_word)
-        player_guess = ValidateGuess.ValidateGuess()
-        checkedGuess = CheckGuess.CheckGuess(player_guess, secret, hidden_word, lives)
-
-        hidden_word = checkedGuess[0]
-        lives = checkedGuess [1]
+        print(f"{hidden_word}                                   Lives: {lives}")
 
         if lives == 0:
             print(f"The secret word was: {secret}")
@@ -53,6 +48,14 @@ while playing:
         elif hidden_word == secret:
             print(f"You guessed the secret word: {secret}")
             game_over = True
+            
+        player_guess = ValidateGuess.ValidateGuess()
+        checkedGuess = CheckGuess.CheckGuess(player_guess, secret, hidden_word, lives)
+
+        hidden_word = checkedGuess[0]
+        lives = checkedGuess [1]
+
+        
 
     replay = input("Would you like to play again(y/n): ").lower()
     if replay in ('n', 'no'):
