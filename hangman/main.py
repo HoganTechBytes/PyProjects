@@ -48,12 +48,12 @@ while playing:
         elif hidden_word == secret:
             print(f"You guessed the secret word: {secret}")
             game_over = True
-            
-        player_guess = ValidateGuess.ValidateGuess()
-        checkedGuess = CheckGuess.CheckGuess(player_guess, secret, hidden_word, lives)
+        else:    
+            player_guess = ValidateGuess.ValidateGuess()
+            checkedGuess = CheckGuess.CheckGuess(player_guess, secret, hidden_word, lives)
 
-        hidden_word = checkedGuess[0]
-        lives = checkedGuess [1]
+            hidden_word = checkedGuess[0]
+            lives = checkedGuess [1]
 
         
 
