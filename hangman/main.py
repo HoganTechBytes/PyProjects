@@ -56,7 +56,9 @@ while playing:
             lives = checkedGuess [1]
 
         
-
     replay = input("Would you like to play again(y/n): ").lower()
+    while replay not in ("n","y","no", "n"):
+        replay = input("Please enter y/n or yes/no): ").lower()
     if replay in ('n', 'no'):
         playing = False
+        
